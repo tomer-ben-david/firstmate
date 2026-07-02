@@ -54,13 +54,16 @@ Full detail on every feature lives in [docs/architecture.md](docs/architecture.m
 
 ## Quick Start
 
-**Requirements:** a verified agent harness (claude, codex, opencode, pi, or grok), git with GitHub auth, and tmux for the reference session backend.
+**Requirements:** a verified agent harness (claude, codex, opencode, pi, grok, or cursor), git with GitHub auth, and tmux for the reference session backend.
+Experimental herdr spawns additionally require `herdr` and `jq`, checked at spawn time.
+Experimental zellij spawns additionally require `zellij` and `jq`, checked at spawn time.
+Experimental Orca spawns additionally require the `orca` CLI when `backend=orca` is selected; Orca owns both the task worktree and terminal endpoint, but Escape remains unsupported.
 The first mate detects and offers to install everything else.
 
 ```sh
 gh auth login
 git clone https://github.com/kunchenguid/firstmate
-cd firstmate && claude   # launch your harness here; AGENTS.md takes over
+cd firstmate && claude   # or cursor-agent, codex, etc.; AGENTS.md takes over
 ```
 
 Then just talk:
